@@ -57,4 +57,10 @@ pnpm format:check
 
 # Format code
 pnpm format
+
+# Run linter
+pnpm lint
+
+# Fix linting issues automatically
+pnpm lint:fix
 ```
