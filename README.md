@@ -64,3 +64,9 @@ pnpm lint
 # Fix linting issues automatically
 pnpm lint:fix
 ```
+
+### Possible improvements
+
+- Add a command line interface to specify params like input, output, word length, ...
+- Provide possible batching/promise pooling to concurrently find combinations
+- Add Docker where each service can be run in a container and distributed with queueing system
