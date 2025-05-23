@@ -9,13 +9,16 @@
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.15.21",
+    "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vitest": "^3.1.4"
   },
