@@ -11,7 +11,7 @@ export class FileInputService implements InputService {
     const content = await readFile(this.filePath, 'utf-8');
     return content
       .split('\n')
-      .map((word) => word.trim().replace(/\r$/, '')) // Remove carriage returns and trim
+      .map((word) => word.trim())
       .filter((word) => word.length > 0);
   }
 }

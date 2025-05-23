@@ -3,7 +3,7 @@ import { OutputService } from './output-service';
 import type { WordCombination } from '../types/word-combination';
 
 describe('OutputService', () => {
-  const service = new OutputService();
+  const service = new OutputService('test-output.txt');
 
   it('should format single combination correctly', () => {
     const combinations: WordCombination[] = [{ parts: ['fo', 'obar'], target: 'foobar' }];
