@@ -9,6 +9,9 @@ export class FileInputService implements InputService {
 
   async readInput(): Promise<string[]> {
     const content = await readFile(this.filePath, 'utf-8');
-    return content.split('\n').filter((word) => word.trim().length > 0);
+    return content
+      .split('\n')
+      .map((word) => word.trim().replace(/\r$/, '')) // Remove carriage returns and trim
+      .filter((word) => word.length > 0);
   }
 }

@@ -18,6 +18,7 @@ describe('FileInputService', () => {
       expect(Array.isArray(words)).toBe(true);
       expect(words.length).toBeGreaterThan(0);
       expect(words.every((word) => typeof word === 'string')).toBe(true);
+      expect(words).toEqual(['word1', 'word2', 'word3']);
     });
   });
 });
