@@ -6,7 +6,7 @@ describe('WordCombinerService', () => {
 
   it('should find valid two-word combinations', () => {
     const words = ['fo', 'obar', 'foobar', 'test', 'er', 'tester'];
-    const combinations = service.findCombinations(words, 6);
+    const combinations = service.findCombinations(words);
 
     expect(combinations).toContainEqual({
       parts: ['fo', 'obar'],
@@ -20,21 +20,22 @@ describe('WordCombinerService', () => {
 
   it('should return empty array when no combinations exist', () => {
     const words = ['hello', 'world', 'test'];
-    const combinations = service.findCombinations(words, 6);
+    const combinations = service.findCombinations(words);
 
     expect(combinations).toHaveLength(0);
   });
 
   it('should not reuse the same word in a combination', () => {
     const words = ['abc', 'abcabc'];
-    const combinations = service.findCombinations(words, 6);
+    const combinations = service.findCombinations(words);
 
     expect(combinations).toHaveLength(0);
   });
 
   it('should work with different target lengths', () => {
+    const service = new WordCombinerService(4);
     const words = ['ab', 'cd', 'abcd'];
-    const combinations = service.findCombinations(words, 4);
+    const combinations = service.findCombinations(words);
 
     expect(combinations).toHaveLength(1);
     expect(combinations[0]).toEqual({
@@ -45,7 +46,7 @@ describe('WordCombinerService', () => {
 
   it('should handle real-world example with han+nah=hannah', () => {
     const words = ['han', 'nah', 'hannah'];
-    const combinations = service.findCombinations(words, 6);
+    const combinations = service.findCombinations(words);
 
     expect(combinations).toContainEqual({
       parts: ['han', 'nah'],
